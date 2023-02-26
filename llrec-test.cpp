@@ -67,7 +67,11 @@ void dealloc(Node* head)
 //   function object struct declarations
 // -----------------------------------------------
 
-
+struct is_odd {
+    bool operator()(int x) {
+        return !(x % 2); 
+    }
+};
 
 
 
@@ -86,7 +90,16 @@ int main(int argc, char* argv[])
     print(head);
 
     // Test out your linked list code
-
+    // Node* my_small = NULL;
+    // Node* my_large = NULL;
+    // llpivot(head, my_small, my_large, 9);
+    // cout << "da two lists are ";
+    // print(my_small); 
+    // print(my_large); 
+    is_odd o; 
+    Node* temp = llfilter(head, o); 
+    cout << "the odd numbers are " << endl;
+    print(temp); 
 
 
     
